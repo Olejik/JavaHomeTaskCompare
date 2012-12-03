@@ -25,9 +25,6 @@ public class Main {
 			a.guess("а");
 		}
 		end = new Date();
-		for (String p : a.guess("а")) {
-			System.out.println(p);
-		}
 		result.append((double)(end.getTime()-start.getTime())/100+"ms\n");
 		return result.toString();
 	}
@@ -61,14 +58,14 @@ public class Main {
 			System.out.println("Tree Crash");
 			System.out.println(e.getMessage());
 		}
-		
-		//try {
+		try
+		{
 			System.out.println(testTime(new Hash()));
-		//}
-		//catch (Exception e) {
-			//System.out.println("Hash Crash!");
-			//System.out.println(e.getStackTrace());
-		//}
+		}
+		catch (Exception e) {
+			System.out.println("Hash Crash!");
+			System.out.println(e.getStackTrace());
+		}
 		/*
 		try {
 			System.out.println("MyHash:");
