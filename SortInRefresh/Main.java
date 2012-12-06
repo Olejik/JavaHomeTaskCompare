@@ -15,29 +15,29 @@ public class Main {
 		result.append("Refreshing time: ");
 		Scanner scanner = new Scanner(new FileReader("parsed.txt"));
 		Date start = new Date();
-		for (int i=0;i<1;i++) {
+		for (int i=0;i<100;i++) {
 			a.refresh(scanner);
 		}
 		Date end = new Date();
 		result.append((double)(end.getTime()-start.getTime())/100+"ms\n");
 		result.append("Search time:");
 		start = new Date();
-		for (int i=0;i<1;i++) {
-			a.guess("à");
+		for (int i=0;i<100;i++) {
+			a.guess("");
 		}
 		end = new Date();
-		result.append((double)(end.getTime()-start.getTime())+"ms\n");
+		result.append((double)(end.getTime()-start.getTime())/100+"ms\n");
 		return result.toString();
 	}
 	/**
 	 * @param args nothing, it's main (:
 	 */
 	public static void main(String[] args) throws Exception{
-		StringBuffer output = new StringBuffer();
+		//StringBuffer output = new StringBuffer();
 		try {
-		int number = TextParser.parse("data.txt", "parsed.txt");
-		System.out.println("number of unique words is "+number);
-		output.append("Number of unique words: "+number+"\n");
+		////int number = TextParser.parse("data.txt", "parsed.txt");
+		//System.out.println("number of unique words is "+number);
+		//output.append("Number of unique words: "+number+"\n");
 		} 
 		catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -49,7 +49,7 @@ public class Main {
 		}
 		catch (Exception e) {
 			System.out.println("List Crash");
-			System.out.println(e.getMessage());
+			System.out.println(e);
 		}
 		
 		try {
